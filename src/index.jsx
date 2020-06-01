@@ -6,7 +6,7 @@ import Big from 'big.js';
 import * as serviceWorker from './serviceWorker';
 
 const Element = ({ value }) => {
-  const [bigNum] = useState(new Big(123.4567).toString());
+  const [bigNum] = useState(new Big(123.4568).toString());
 
   return (
     <div>
