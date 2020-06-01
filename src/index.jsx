@@ -1,37 +1,12 @@
-import React, { useState } from 'react'; // eslint-disable-line import/no-unresolved
+import React from 'react'; // eslint-disable-line import/no-unresolved
 import ReactDOM from 'react-dom'; // eslint-disable-line import/no-unresolved
 import './index.css';
-import PropTypes from 'prop-types'; // eslint-disable-line import/no-unresolved
-import Big from 'big.js'; // eslint-disable-line import/no-unresolved,import/extensions
 import * as serviceWorker from './serviceWorker';
-
-const Element = ({ value }) => {
-  const [bigNum] = useState(new Big(123.4568).toString());
-
-  return (
-    <div>
-      <h1>
-        Hello World
-        <span role="img" aria-label="world">
-          🌎
-        </span>
-      </h1>
-      <p>
-        {bigNum}
-        |
-        {value}
-      </p>
-    </div>
-  );
-};
-
-Element.propTypes = {
-  value: PropTypes.string.isRequired,
-};
+import App from './components/App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Element value="3" />
+    <App />
   </React.StrictMode>,
   document.getElementById('root'),
 );
