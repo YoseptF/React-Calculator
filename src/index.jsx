@@ -1,7 +1,7 @@
 import React, { useState } from 'react'; // eslint-disable-line import/no-unresolved
 import ReactDOM from 'react-dom'; // eslint-disable-line import/no-unresolved
 import './index.css';
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'; // eslint-disable-line import/no-unresolved
 import Big from 'big.js'; // eslint-disable-line import/no-unresolved,import/extensions
 import * as serviceWorker from './serviceWorker';
 
