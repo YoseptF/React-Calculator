@@ -6,20 +6,19 @@ import Big from 'big.js';
 import * as serviceWorker from './serviceWorker';
 
 const Element = ({ value }) => {
-  const [bigNum] = useState((new Big(123.4567)).toString());
+  const [bigNum] = useState(new Big(123.4567).toString());
 
   return (
     <div>
       <h1>
         Hello World
-        {' '}
-        <span role="img" aria-label="world">🌎</span>
+        <span role="img" aria-label="world">
+          🌎
+        </span>
       </h1>
       <p>
         {bigNum}
-        {' '}
         |
-        {' '}
         {value}
       </p>
     </div>
