@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
+import React, { useState } from 'react'; // eslint-disable-line import/no-unresolved
+import ReactDOM from 'react-dom'; // eslint-disable-line import/no-unresolved
 import './index.css';
 import PropTypes from 'prop-types';
-import Big from 'big.js';
+import Big from 'big.js'; // eslint-disable-line import/no-unresolved,import/extensions
 import * as serviceWorker from './serviceWorker';
 
 const Element = ({ value }) => {
