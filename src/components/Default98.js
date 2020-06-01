@@ -6,7 +6,7 @@ const TitleBar = ({ title }) => (
   <div className="title-bar windowHeader">
     <div className="title-bar-text">{title}</div>
     <div className="title-bar-controls">
-      <button aria-label="Close" />
+      <button type="button" aria-label="Close" />
     </div>
   </div>
 );
@@ -36,7 +36,7 @@ const WindowBody = ({ children }) => (
 );
 
 WindowBody.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.arrayOf(Element).isRequired,
 };
 
 export { TitleBar, WindowBody };
