@@ -22,7 +22,14 @@ const ButtonPanel = () => {
   ];
 
   const buttons = symbols.map((group, index) => {
-    const groupSymbols = group.map(symbol => <Button name={symbol} key={symbol} extraLarge={symbol === '='} />);
+    const groupSymbols = group.map(symbol => (
+      <Button
+        name={symbol}
+        key={symbol}
+        wide={symbol === '0'}
+        color={symbol === '0' ? 'orange' : 'silver'}
+      />
+    ));
 
     return (
       <div className={`group-${index + 1}`} key={`group-${index + 1}`}>

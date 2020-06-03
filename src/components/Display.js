@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Display.scss';
 
 const Display = ({ result, onChange }) => {
   const handleChange = e => {
@@ -12,6 +13,7 @@ const Display = ({ result, onChange }) => {
 
   return (
     <input
+      className="display"
       id="text17"
       type="number"
       pattern="[0-9]"

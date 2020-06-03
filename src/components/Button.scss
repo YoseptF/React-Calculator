@@ -1,15 +1,22 @@
 .buttonPanel{
+  display: flex;
   button{
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: black;
+    border: 1px solid grey;
+    border-radius: 0;
     cursor: pointer;
-    width: 3rem;
-    height: 3rem;
+    width: calc(25% - 0.2rem);
+    height: 100%;
     margin: 0.1rem;
     min-width: unset;
-    &.extraLarge{
-      width: 6.2rem;
+    &.wide{
+      width: calc(50% - 0.2rem);
     }
     &:not(:disabled):active {
-      padding: unset;
+      border: 1px solid grey;
+      padding: 0 12px;
     }
   }
 }
