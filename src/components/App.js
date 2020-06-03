@@ -10,7 +10,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: 0,
+      value: '0',
       // currentOperation: '',
     };
     this.updateValue = this.updateValue.bind(this);
@@ -29,7 +29,7 @@ class App extends React.Component {
         <div className="window" id="Calculator">
           <TitleBar title="Calculator" />
           <WindowBody>
-            <Display value={value} onChange={this.updateValue} />
+            <Display result={value} onChange={this.updateValue} />
             <ButtonPanel onclick={this.updateValue} />
           </WindowBody>
 
