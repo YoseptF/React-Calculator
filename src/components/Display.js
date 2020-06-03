@@ -22,9 +22,12 @@ const Display = ({ result, onChange }) => {
   );
 };
 
+Display.defaultProps = {
+  result: '0',
+};
 
 Display.propTypes = {
-  result: PropTypes.string.isRequired,
+  result: PropTypes.string,
   onChange: PropTypes.func.isRequired,
 };
 
