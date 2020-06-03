@@ -10,27 +10,27 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: '0',
+      result: '0',
       // currentOperation: '',
     };
-    this.updateValue = this.updateValue.bind(this);
+    this.updateResult = this.updateResult.bind(this);
   }
 
-  updateValue(newValue) {
+  updateResult(newResult) {
     this.setState({
-      value: newValue,
+      result: newResult,
     });
   }
 
   render() {
-    const { value } = this.state;
+    const { result } = this.state;
     return (
       <Desktop>
         <div className="window" id="Calculator">
           <TitleBar title="Calculator" />
           <WindowBody>
-            <Display result={value} onChange={this.updateValue} />
-            <ButtonPanel onclick={this.updateValue} />
+            <Display result={result} onChange={this.updateResult} />
+            <ButtonPanel onclick={this.updateResult} />
           </WindowBody>
 
         </div>

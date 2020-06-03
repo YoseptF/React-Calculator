@@ -37,8 +37,5 @@ const ButtonPanel = () => {
     </div>
   );
 };
-// ButtonPanel.propTypes = {
-//   onclick: PropTypes.func.isRequired,
-// };
 
 export default ButtonPanel;
