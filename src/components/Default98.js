@@ -1,6 +1,6 @@
 import React from 'react';
 import '98.css';
-import PropTypes from 'prop-types';
+import PropTypes, { element } from 'prop-types';
 
 const TitleBar = ({ title }) => (
   <div className="title-bar windowHeader">
@@ -36,7 +36,7 @@ const WindowBody = ({ children }) => (
 );
 
 WindowBody.propTypes = {
-  children: PropTypes.arrayOf(Element).isRequired,
+  children: PropTypes.arrayOf(element).isRequired,
 };
 
 export { TitleBar, WindowBody };

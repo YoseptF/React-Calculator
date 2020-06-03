@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Display = ({ value, onChange }) => {
+const Display = ({ result, onChange }) => {
   const handleChange = e => {
     if (e.target.value === '') {
-      onChange(0);
+      onChange('0');
     } else {
-      onChange(parseFloat(e.target.value));
+      onChange(e.target.value);
     }
   };
 
@@ -16,7 +16,7 @@ const Display = ({ value, onChange }) => {
       type="number"
       pattern="[0-9]"
       autoComplete="off"
-      value={Number(value).toString()}
+      value={Number(result).toString()}
       onChange={handleChange}
     />
   );
@@ -24,7 +24,7 @@ const Display = ({ value, onChange }) => {
 
 
 Display.propTypes = {
-  value: PropTypes.number.isRequired,
+  result: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };
 
