@@ -5,13 +5,13 @@ import './App.scss';
 import { TitleBar, WindowBody } from './Default98';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
+import _calculate from '../logic/calculate'; // eslint-disable-line no-unused-vars
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       result: '0',
-      // currentOperation: '',
     };
     this.updateResult = this.updateResult.bind(this);
   }
