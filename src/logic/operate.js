@@ -5,15 +5,15 @@ const operate = (numberOne, numberTwo, operation) => {
   const bigTwo = Big(numberTwo);
   switch (operation) {
     case '-':
-      return bigOne - bigTwo;
+      return bigOne.minus(bigTwo);
     case '+':
-      return bigOne + bigTwo;
+      return bigOne.plus(bigTwo);
     case 'X':
-      return bigOne * bigTwo;
-    case '%':
-      return bigOne % bigTwo;
+      return bigOne.times(bigTwo);
     case '÷':
-      return bigOne / bigTwo;
+      if (parseFloat(numberTwo) === 0) return 'error';
+      if (parseFloat(numberTwo) === '.') return 0;
+      return bigOne.div(numberTwo);
 
     default:
       return -1;

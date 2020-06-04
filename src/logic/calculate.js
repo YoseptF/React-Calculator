@@ -27,6 +27,16 @@ const calculate = (dataObject, buttonName) => {
       newData.operation = null;
       break;
 
+    case '%':
+      if (newData.total && parseFloat(newData.total) > 0) {
+        newData.total = operate(dataObject.total, 100, '÷');
+      }
+
+      if (newData.next && parseFloat(newData.next) > 0) {
+        newData.next = operate(dataObject.next, 100, '÷');
+      }
+      break;
+
     default:
       newData.total = operate(...dataObject);
       newData.next = '0';
