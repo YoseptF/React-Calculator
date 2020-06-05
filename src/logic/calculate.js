@@ -1,49 +1,74 @@
 import operate from './operate';
 
 const calculate = (dataObject, buttonName) => {
-  const newData = dataObject;
+  let {
+    next, total, current, operation,
+  } = dataObject;
   switch (buttonName) {
-    case '0':
-    case '1':
-    case '2':
-    case '3':
-    case '4':
-    case '5':
-    case '6':
-    case '7':
-    case '8':
-    case '9':
-      newData.next += buttonName;
+    case '+':
+    case '-':
+    case 'X':
+    case '÷':
+      if (!total) {
+        total = next;
+        next = null;
+        operation = buttonName;
+        break;
+      } else {
+        total = operate(total, next, operation);
+        next = null;
+        current = total.toString();
+        operation = buttonName;
+      }
+
+      break;
+
+    case '=':
+      if (operation === null) { break; }
+
+      next = operate(total, next, operation);
+      total = null;
+      operation = null;
+      current = next.toString();
       break;
 
     case '+/-':
-      newData.total *= -1;
-      newData.next *= -1;
+      next *= -1;
+      current = next;
       break;
 
     case 'AC':
-      newData.total = '0';
-      newData.next = '0';
-      newData.operation = null;
+      total = null;
+      next = null;
+      current = '0';
+      operation = null;
       break;
 
     case '%':
-      if (newData.total && parseFloat(newData.total) > 0) {
-        newData.total = operate(dataObject.total, 100, '÷');
-      }
-
-      if (newData.next && parseFloat(newData.next) > 0) {
-        newData.next = operate(dataObject.next, 100, '÷');
+      if (!total) {
+        ({
+          next, total, current, operation,
+        } = calculate({
+          next, total, current, operation,
+        }, 'AC'));
+      } else if (operation === '+' || operation === '-') {
+        next = operate(total, next / 100, 'X');
+        current = next.toString();
+      } else if (operation === 'X' || operation === '÷') {
+        next = operate(next, 100, '÷');
+        current = next.toString();
       }
       break;
 
     default:
-      newData.total = operate(...dataObject);
-      newData.next = '0';
-      newData.operation = null;
+      if (next === null) next = '';
+      next += buttonName;
+      current = next;
       break;
   }
-  return newData;
+  return {
+    next, total, current, operation,
+  };
 };
 
 export default calculate;

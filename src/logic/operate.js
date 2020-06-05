@@ -1,8 +1,15 @@
 import Big from 'big.js'; // eslint-disable-line import/extensions
 
 const operate = (numberOne, numberTwo, operation) => {
-  const bigOne = Big(numberOne);
-  const bigTwo = Big(numberTwo);
+  let bigOne;
+  let bigTwo;
+  if (numberOne == null || numberTwo == null) {
+    bigOne = Big(0);
+    bigTwo = Big(0);
+  } else {
+    bigOne = Big(numberOne);
+    bigTwo = Big(numberTwo);
+  }
   switch (operation) {
     case '-':
       return bigOne.minus(bigTwo);

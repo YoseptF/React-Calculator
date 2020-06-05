@@ -1,8 +1,9 @@
 import React from 'react';
 import Button from './Button';
 import './ButtonPanel.scss';
+import PropTypes from 'prop-types';
 
-const ButtonPanel = () => {
+const ButtonPanel = ({ clickHandler }) => {
   const symbols = [
     [
       'AC', '+/-', '%', '÷',
@@ -28,6 +29,7 @@ const ButtonPanel = () => {
         key={symbol}
         wide={symbol === '0'}
         color={symbol === '0' ? 'orange' : 'silver'}
+        onClick={clickHandler}
       />
     ));
 
@@ -43,6 +45,10 @@ const ButtonPanel = () => {
       {buttons}
     </div>
   );
+};
+
+ButtonPanel.propTypes = {
+  clickHandler: PropTypes.func.isRequired,
 };
 
 export default ButtonPanel;

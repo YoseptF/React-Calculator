@@ -5,32 +5,41 @@ import './App.scss';
 import { TitleBar, WindowBody } from './Default98';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
-import _calculate from '../logic/calculate'; // eslint-disable-line no-unused-vars
+import calculate from '../logic/calculate'; // eslint-disable-line no-unused-vars
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      result: '0',
+      total: null,
+      next: null,
+      operation: null,
+      current: null,
     };
-    this.updateResult = this.updateResult.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.updateFromDisplay = this.updateFromDisplay.bind(this);
   }
 
-  updateResult(newResult) {
+  handleClick(buttonName) {
+    const newState = calculate(this.state, buttonName);
+    this.setState(newState);
+  }
+
+  updateFromDisplay(num) {
     this.setState({
-      result: newResult,
+      current: num,
     });
   }
 
   render() {
-    const { result } = this.state;
+    const { current } = this.state;
     return (
       <Desktop>
         <div className="window" id="Calculator">
           <TitleBar title="Calculator" />
           <WindowBody>
-            <Display result={result} onChange={this.updateResult} />
-            <ButtonPanel onclick={this.updateResult} />
+            <Display result={current} onChange={this.updateFromDisplay} />
+            <ButtonPanel clickHandler={this.handleClick} />
           </WindowBody>
 
         </div>
