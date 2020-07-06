@@ -1,6 +1,8 @@
 # React Calculator
 This is a Calculator created using create-react-app and 98.css
 
+![headerImg](https://github.com/microverseinc/readme-template/raw/master/app_screenshot.png)
+
 ---
 
 # Try it out!!
@@ -30,14 +32,16 @@ $ npm start
 
 ---
 
-# Made with
+# Build with
 - React
 - 98.css
 - node-sass
 
 ---
 
-# Made by
+# Authors
 
 Me: Joseph Flores 🧔
-[LinkedIn](https://www.linkedin.com/in/joseph-flores-vega/)
+- Github: [@yoseptf](https://github.com/yoseptf)
+- Twitter: [@yosept__](https://twitter.com/yosept__)
+- Linkedin: [Joseph Flores](https://www.linkedin.com/in/joseph-flores-vega/)
